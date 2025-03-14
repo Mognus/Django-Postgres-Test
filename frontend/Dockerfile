@@ -1,0 +1,17 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Install dependencies
+COPY package*.json ./
+RUN npm install --legacy-peer-deps
+
+# Copy source
+COPY . .
+
+# Build app
+RUN npm run build
+RUN npm i lightningcss-linux-x64-musl @tailwindcss/oxide-linux-x64-musl sass-embedded-linux-x64
+
+# Start the app
+CMD ["npm", "run", "dev"]

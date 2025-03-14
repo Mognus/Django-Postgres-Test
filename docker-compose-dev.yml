@@ -49,6 +49,17 @@ services:
       # if later frontend-service:
       # - frontend
 
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://nginx:5000
+
   backup:
     image: postgres:13
     volumes:
@@ -63,13 +74,6 @@ services:
       - db
     entrypoint: ["bash", "/backup-scripts/backup-entrypoint.sh"]
 
-  # Later Frontend Service
-  # frontend:
-  #   build: ./frontend
-  #   volumes:
-  #     - ./frontend:/app
-  #   expose:
-  #     - 3000
 
 volumes:
   postgres_data:
