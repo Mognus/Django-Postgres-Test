@@ -16,11 +16,17 @@ class Person(TimeStampedModel):
     name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
 
+    class Meta:
+        db_table = 'person'
+
     def __str__(self):
         return self.name
 
 
 class CustomUser(AbstractUser):
     bio = models.TextField(blank=True)
+    class Meta:
+        db_table = 'CustomUser'
+
     def __str__(self):
         return self.username

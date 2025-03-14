@@ -2,8 +2,8 @@
 echo "Backup-Container startet..."
 
 # Initiales Backup
-echo "Erstelle initiales Backup..."
-/backup-scripts/perform-backup.sh
+# echo "Erstelle initiales Backup..."
+# /backup-scripts/perform-backup.sh
 
 # Shell-Loop 
 echo "Starte Backup-Loop (jede Stunde)"
