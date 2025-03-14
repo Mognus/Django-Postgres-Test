@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     # Third-party apps
     'rest_framework',
+    'django_filters',
     
     # Local apps
     'test_postgre',
@@ -56,7 +57,8 @@ INSTALLED_APPS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+        # 'rest_framework.permissions.IsAuthenticated',  
+        'rest_framework.permissions.AllowAny',  
     ],
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
