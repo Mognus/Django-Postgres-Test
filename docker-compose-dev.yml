@@ -54,7 +54,9 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     volumes:
-      - ./frontend:/app
+      - ./frontend:/app:delegated
+      - /app/node_modules    # This is a volume mount exclusion
+      - /app/.next           # This is a volume mount exclusion
     ports:
       - "3000:3000"
     environment:

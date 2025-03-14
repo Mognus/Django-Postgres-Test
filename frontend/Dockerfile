@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:18-slim
 
 WORKDIR /app
 
@@ -11,7 +11,8 @@ COPY . .
 
 # Build app
 RUN npm run build
-RUN npm i lightningcss-linux-x64-musl @tailwindcss/oxide-linux-x64-musl sass-embedded-linux-x64
+# RUN npm i lightningcss-linux-x64-musl @tailwindcss/oxide-linux-x64-musl sass-embedded-linux-x64
 
 # Start the app
-CMD ["npm", "run", "dev"]
+# CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]
