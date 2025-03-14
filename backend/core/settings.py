@@ -36,7 +36,7 @@ ALLOWED_HOSTS = [
                 'web'
                 ]
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:5000']
+CSRF_TRUSTED_ORIGINS = ['http://localhost:5000', 'http://localhost']
 # Application definition
 
 INSTALLED_APPS = [
